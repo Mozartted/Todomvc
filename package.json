@@ -1,0 +1,20 @@
+{
+  "name": "todomvc-angular",
+  "version": "1.0.0",
+  "description": "A todo app using angular with mongodb and node backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mozartted",
+  "license": "ISC",
+  "devDependencies": {
+    "angular": "^1.5.9",
+    "angular-route": "^1.5.9",
+    "browser-sync": "^2.18.2",
+    "express": "^4.14.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "mongoose": "^4.7.0"
+  }
+}
