@@ -22,84 +22,8 @@
     </div>
 </nav>
 <div class="container" ng-app="TodoMVC">
-    <div class="col-md-12">
-        <div class="center" style="width:500px;">
-            <div class="col-md-12">
-                <h1>
-                TodoMVC angular
-                </h1>
-            </div>
-            <div class="col-md-12">
-                <div class="col-md-12 form-group">
-                    <input type="text" class="form-control" placeholder="What do you want to accomplish today">
-                    <button class="btn btn-primary" type="submit">
-                        Go
-                    </button>
-                </div>
-            </div>
-           <div class="col-md-12">
-               <ul class="list-group">
-                   <li class="list-group-item blocked">
-                       <div class="col-md-12">
-                           <div class="col-md-7">
-                               List
-                           </div>
-                           <div class="col-md-5">
-                               <div class="input-group">
-                                   <input type="radio" id="complete" name="status">
-                                   <label>complete</label>
-                               </div>
-                           </div>
-                       </div>
-                   </li>
-                   <li class="list-group-item blocked">
-                       <div class="col-md-12">
-                           <div class="col-md-7">
-                               List
-                           </div>
-                           <div class="col-md-5">
-                               <div class="input-group">
-                                   <input type="radio" id="complete" name="status">
-                                   <label>complete</label>
-                               </div>
-                           </div>
-                       </div>
-                   </li>
-                   <li class="list-group-item blocked">
-                       <div class="col-md-12">
-                           <div class="col-md-7">
-                               List
-                           </div>
-                           <div class="col-md-5">
-                               <div class="input-group">
-                                   <input type="radio" id="complete" name="status">
-                                   <label>complete</label>
-                               </div>
-                           </div>
-                       </div>
-                   </li>
-                   <li class="list-group-item blocked">
-                       <div class="col-md-12">
-                           <div class="col-md-7">
-                               List
-                           </div>
-                           <div class="col-md-5">
-                               <div class="input-group">
-                                   <input type="radio" id="complete" name="status">
-                                   <label>complete</label>
-                               </div>
-                           </div>
-                       </div>
-                   </li>
-               </ul>
-
-               <div class="col-md-12">
-                   <div class="btn btn-primary"> All </div>
-                   <div class="btn btn-primary"> Completed </div>
-               </div>
-           </div>
-        </div>
-    </div>
+    <ng-view />
+    
 </div>
 
 </body>
