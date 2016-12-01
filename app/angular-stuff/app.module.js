@@ -4,6 +4,13 @@ angular.module('TodoMVC',['ngRoute','ngResource'])
 
     var routeConfig={
             'controller':'TodoController',
-            'templateUrl':'scripts/html/todo.html'
+            'templateUrl':'angular-stuff/html/todo.html'
     };
+
+    $routeProvider
+    .when('/',routeConfig)
+    .otherwise({
+        redirectTo:'/'
+    })
+
 });
