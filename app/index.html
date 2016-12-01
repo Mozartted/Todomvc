@@ -5,7 +5,8 @@
 <title>Todo</title>
 
 <!--All the cool css links, wait its just bootstrap-->
-<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="styles/bootstrap.min.css">
+<link rel="stylesheet" href="styles/styles.css">
 <script src="scripts/jquery.min.js"></script>
 <script src="scripts/bootstrap.min.js"></script>
 <script src="angular-stuff/angular/angular-stuff.js"></script>
@@ -19,6 +20,86 @@
         </div>
     </div>
 </nav>
+<div class="container">
+    <div class="col-md-12">
+        <div class="center" style="width:500px;">
+            <div class="col-md-12">
+                <h1>
+                TodoMVC angular
+                </h1>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-12 form-group">
+                    <input type="text" class="form-control" placeholder="What do you want to accomplish today">
+                    <button class="btn btn-primary" type="submit">
+                        Go
+                    </button>
+                </div>
+            </div>
+           <div class="col-md-12">
+               <ul class="list-group">
+                   <li class="list-group-item blocked">
+                       <div class="col-md-12">
+                           <div class="col-md-7">
+                               List
+                           </div>
+                           <div class="col-md-5">
+                               <div class="input-group">
+                                   <input type="radio" id="complete" name="status">
+                                   <label>complete</label>
+                               </div>
+                           </div>
+                       </div>
+                   </li>
+                   <li class="list-group-item blocked">
+                       <div class="col-md-12">
+                           <div class="col-md-7">
+                               List
+                           </div>
+                           <div class="col-md-5">
+                               <div class="input-group">
+                                   <input type="radio" id="complete" name="status">
+                                   <label>complete</label>
+                               </div>
+                           </div>
+                       </div>
+                   </li>
+                   <li class="list-group-item blocked">
+                       <div class="col-md-12">
+                           <div class="col-md-7">
+                               List
+                           </div>
+                           <div class="col-md-5">
+                               <div class="input-group">
+                                   <input type="radio" id="complete" name="status">
+                                   <label>complete</label>
+                               </div>
+                           </div>
+                       </div>
+                   </li>
+                   <li class="list-group-item blocked">
+                       <div class="col-md-12">
+                           <div class="col-md-7">
+                               List
+                           </div>
+                           <div class="col-md-5">
+                               <div class="input-group">
+                                   <input type="radio" id="complete" name="status">
+                                   <label>complete</label>
+                               </div>
+                           </div>
+                       </div>
+                   </li>
+               </ul>
+
+               <div class="col-md-12">
+                   <div class="btn btn-primary"> All </div>
+                   <div class="btn btn-primary"> Completed </div>
+               </div>
+           </div>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

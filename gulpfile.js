@@ -1,5 +1,5 @@
 var gulp=require("gulp"),
-    browser_sync=require("browser-sync"),
+    browserSync=require("browser-sync"),
     concat=require("gulp-concat"),
     uglify=require("gulp-uglify");
 
@@ -8,11 +8,29 @@ var gulp=require("gulp"),
 gulp.task('styles', function(){
     return gulp.src(
         [
-            'node_modules/bootstrap/dist/css/bootstrap.min.css'
+            'node_modules/bootstrap/dist/css/bootstrap.min.css',
+            'styles.css'
         ]
     ).
     pipe(gulp.dest('app/styles'));
 });
+
+gulp.task('serve',function(){
+    browserSync.init({
+        server:"app"
+    });
+
+    gulp.watch([
+        '*.css',
+    ],['styles','fonts']);
+
+    gulp.watch([
+        '*.js',
+    ],['scripts']);
+
+    gulp.watch("app/*.html").on('change',browserSync.reload);
+});
+
 
 gulp.task('scripts', function(){
     return gulp.src(
@@ -22,6 +40,16 @@ gulp.task('scripts', function(){
         ]
     ).
     pipe(gulp.dest('app/scripts'));
+});
+
+gulp.task('fonts',function(){
+    return gulp.src([
+        'node_modules/bootstrap/fonts/glyphicons-halflings-regular.eot',
+        'node_modules/bootstrap/fonts/glyphicons-halflings-regular.svg',
+        'node_modules/bootstrap/fonts/glyphicons-halflings-regular.ttf',
+        'node_modules/bootstrap/fonts/glyphicons-halflings-regular.woff',
+        'node_modules/bootstrap/fonts/glyphicons-halflings-regular.woff2'
+    ]).pipe(gulp.dest('app/fonts'));
 });
 
 gulp.task('angular-stuff', function(){
@@ -36,4 +64,4 @@ gulp.task('angular-stuff', function(){
     .pipe(gulp.dest('app/angular-stuff/angular'));
 });
 
-gulp.task('default',['scripts','angular-stuff','styles']);
+gulp.task('default',['scripts','angular-stuff','styles','fonts','serve']);
