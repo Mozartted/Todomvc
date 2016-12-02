@@ -4,7 +4,7 @@
 > seems like the fastest way to learn angular
 
 ## Description
-A simple app to learn angular js,
+A classic todo app to learn angular js,
 
 
 ### The layout
