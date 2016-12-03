@@ -4,7 +4,16 @@ angular.module('TodoMVC',['ngRoute','ngResource'])
 
     var routeConfig={
             'controller':'TodoController',
-            'templateUrl':'angular-stuff/html/todo.html'
+            'templateUrl':'angular-stuff/html/todo.html',
+            resolve: {
+				store: function (todoStorage) {
+					// Get the correct module (API or localStorage).
+					return todoStorage.then(function (module) {
+						module.get(); // Fetch the todo records in the background.
+						return module;
+					});
+				}
+			}
     };
 
     $routeProvider
