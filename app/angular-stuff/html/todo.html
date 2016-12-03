@@ -7,10 +7,9 @@
         </div>
         <div class="col-md-12">
             <div class="col-md-12 form-group">
-                <input type="text" class="form-control" placeholder="What do you want to accomplish today">
-                <button class="btn btn-primary" type="submit">
-                    Go
-                </button>
+                <form id="todo-form" ng-submit="addtask()">
+                ``<input type="text" ng-model="newTask" class="form-control" placeholder="What do you want to accomplish today">
+                </form>
             </div>
         </div>
        <div class="col-md-12">

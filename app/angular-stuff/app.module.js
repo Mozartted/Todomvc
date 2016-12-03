@@ -11,6 +11,6 @@ angular.module('TodoMVC',['ngRoute','ngResource'])
     .when('/',routeConfig)
     .otherwise({
         redirectTo:'/'
-    })
+    });
 
 });
