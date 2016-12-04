@@ -1,4 +1,4 @@
-angular.module('TodoMvc')
+twangular.module('TodoMvc')
     .factory('TodoStore',['$resource','$http','$injector',function($http,$injector){
 
         return $http.get('/api')
@@ -50,6 +50,7 @@ angular.module('TodoMvc')
 				return store.api.query(function (resp) {
 					angular.copy(resp, store.todos);
 				});
+                //copies the response to the store.todos tasks
 			},
 
 			insert: function (todo) {
