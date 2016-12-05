@@ -1,7 +1,9 @@
-var mongoose          = require('mongoose'),
+var mongoose = require('mongoose');
 
-    Todo      =  mongoose.Schema({
-    title:      { type: String },
-    complete:         { type: Boolean},
-    
+//creating the schema
+var Todo =  mongoose.Schema({
+    title:  { type: String },
+    complete: { type: Boolean},
 });
+
+module.exports=mongoose.model('Todo',Todo);
