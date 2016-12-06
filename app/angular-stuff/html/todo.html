@@ -7,21 +7,21 @@
         </div>
         <div class="col-md-12">
             <div class="col-md-12 form-group">
-                <form id="todo-form" ng-submit="addtask()">
-                ``<input type="text" ng-model="newTask" class="form-control" placeholder="What do you want to accomplish today">
+                <form id="todo-form" ng-submit="$ctrl.addtask()">
+                ``<input type="text" ng-model="$ctrl.newTask" class="form-control" placeholder="What do you want to accomplish today">
                 </form>
             </div>
         </div>
        <div class="col-md-12">
-           <ul class="list-group" np-repeat="">
-               <li class="list-group-item blocked">
+           <ul class="list-group">
+               <li class="list-group-item blocked" ng-repeat="todo in $ctrl.todos">
                    <div class="col-md-12">
                        <div class="col-md-7">
-                           List
+                           {{todo.title}}
                        </div>
                        <div class="col-md-5">
                            <div class="input-group">
-                               <input type="radio" id="complete" name="status">
+                               <input type="radio" id="complete" name="status" ng-checked="{{todo.complete}}">
                                <label>complete</label>
                            </div>
                        </div>
