@@ -71,7 +71,11 @@ app.factory('TodoStore',function($http,$injector){
 			}
         }
 
+        return store;
+
+
     }])
     .factory('localStorage',['$q',function(){
 
+            return store;
     }])
