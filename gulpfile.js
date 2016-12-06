@@ -59,8 +59,7 @@ gulp.task('angular-stuff', function(){
             'node_modules/angular-resource/angular-resource.js',
             'node_modules/angular-route/angular-route.js'
         ]
-    ).pipe(uglify())
-    .pipe(concat('angular-stuff.js'))
+    )
     .pipe(gulp.dest('app/angular-stuff/angular'));
 });
 

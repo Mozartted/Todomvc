@@ -1,5 +1,4 @@
-twangular.module('TodoMvc')
-    .factory('TodoStore',['$resource','$http','$injector',function($http,$injector){
+app.factory('TodoStore',function($http,$injector){
 
         return $http.get('/api')
 			.then(function () {
@@ -7,7 +6,7 @@ twangular.module('TodoMvc')
 			}, function () {
 				return $injector.get('localStorage');
 			});
-    }])
+    })
     //the api factory for updating the resource from server
     .factory('api',['$resource',function($resource){
 

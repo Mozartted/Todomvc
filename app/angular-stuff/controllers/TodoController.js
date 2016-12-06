@@ -1,5 +1,4 @@
-angular.module('TodoMVC')
-    .controller('TodoController',function TodoController ($ctrl,$routeParams,$filter){
+app.controller('TodoController',function TodoController ($ctrl,$routeParams,$filter){
         //the todo controller would be handling new additions to the
         //todo list and applying these to the DB via node and $resource
 
