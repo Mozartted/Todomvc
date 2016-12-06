@@ -5,7 +5,7 @@
 //getting incompleted tasks
 //deleting tasks
 //editing tasks
-var User=require('../models/Todo');
+var Todo=require('../models/Todo');
 
 //every operation here can be reused by the route to perform operations
 module.exports={
@@ -14,7 +14,7 @@ module.exports={
         var todo=req.body.todo;
         var complete=false;
 
-        var user=new User(
+        var task=new Todo(
             {
                 title:todo,
                 completed:complete;
@@ -22,21 +22,41 @@ module.exports={
             }
         );
 
-        user.save(function(err, result) {
+        task.save(function(err, result) {
             if (err) {
                 res.status(500).json({ message: err.message });
             }
             res.json(result);
         });
-    }
+    },
 
     findTodo:function(req,res){
         //find a particular task
         var $query=req.body.search;
 
-        User.find({'todo':'$query'},'todo',)
+        Todo.find({todo:'$query'},'todo',function(err,existingTodo){
+            if(existingTodo){
+                return res.json(existingTodo);
+            }
+        });
         //finding the Users matchnig the search
-    }
+    },
+
+    deleting:function(req,res){
+        Todo.find({todo:req.body.todo},function(err,task){
+            if(task){
+                task.remove();
+
+                return res.json({message:"task has been deleted"});
+            }else{
+                return res.json({message:"task does not exist"});
+            }
+        });
+    },
+
+
+
+
 
 
 
