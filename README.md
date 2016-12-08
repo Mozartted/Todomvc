@@ -4,7 +4,7 @@
 > seems like the fastest way to learn angular
 
 ## Description
-A classic todo app to learn angular js,
+A classic todo app to learn angular js, The Application would contain lots of components with regards to communication between angular and node.
 
 
 ### The layout
