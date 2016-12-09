@@ -10,7 +10,7 @@ var Todo=require('../models/Todo');
 //every operation here can be reused by the route to perform operations
 module.exports={
 
-    addTodo:function(req,res){
+    Create:function(req,res){
         var todo=req.body.todo;
         var complete=false;
 
@@ -30,7 +30,7 @@ module.exports={
         });
     },
 
-    findTodo:function(req,res){
+    RetrieveSingle:function(req,res){
         //find a particular task
         var $query=req.body.search;
 
@@ -42,7 +42,17 @@ module.exports={
         //finding the Users matchnig the search
     },
 
-    deleting:function(req,res){
+    RetrieveAll:function(req,res){
+        //find a particular task
+        Todo.find({},function(err,Todos){
+            if(Todos){
+                return res.json(Todos);
+            }
+        });
+        //finding the Users matchnig the search
+    },
+
+    Delete:function(req,res){
         Todo.find({todo:req.body.todo},function(err,task){
             if(task){
                 task.remove();
