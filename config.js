@@ -1,3 +1,3 @@
 module.exports={
-    db: process.env.db || 'localhost'
+    db: process.env.MONGODB || process.env.MONGOHQ_URL
 };
