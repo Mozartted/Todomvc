@@ -31,7 +31,7 @@ app.use(express.static(path.join(__dirname,'app')));
 |-------------------------------------------------
 | Route's Configurations
 |-------------------------------------------------
-| Routhes Configurations from server/routes
+| Routes Configurations from server/routes
 |
 |
 |
