@@ -30,6 +30,12 @@ module.exports={
         });
     },
 
+    Update:function(req,res)
+    {
+      //updating a mongo database using node, first get the database values
+      //from connections, then perfrom update operations
+    }
+
     RetrieveSingle:function(req,res){
         //find a particular task
         var $query=req.body.search;
