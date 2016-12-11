@@ -17,7 +17,7 @@ module.exports={
         var task=new Todo(
             {
                 title:todo,
-                completed:complete;
+                completed:complete,
 
             }
         );
@@ -30,12 +30,17 @@ module.exports={
         });
     },
 
-    Update:function(req,res)
-    {
-      //updating a mongo database using node, first get the database values
+    Update:function(req,res){
+        //updating a mongo database using node, first get the database values
       //from connections, then perfrom update operations
-      var Todo=new Todo();
-    }
+      Todo.find({title:req.params.profile},function(err,Todo){
+        Todo.title=req.body.title;
+        Todo.completed=req.body.status;
+        Todo.save(function(err) {
+          res.status(200).send({ message: 'Profile Update Succesfully'});
+        });
+      });
+    },
 
     RetrieveSingle:function(req,res){
         //find a particular task

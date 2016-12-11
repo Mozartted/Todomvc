@@ -9,6 +9,7 @@ var routes=require('./server/routes');
 mongoose.connect(config.db);
 
 var app=express();
+var port=process.env.PORT||3000;
 
 // Force HTTPS on heroku
 if(process.env.NODE_ENV === 'production') {
@@ -24,7 +25,7 @@ if(process.env.NODE_ENV === 'production') {
   });
 }
 
-app.set('port',process.env.PORT||3000);
+app.set('port',port);
 app.use(express.static(path.join(__dirname,'app')));
 
 /*
@@ -34,3 +35,19 @@ app.use(express.static(path.join(__dirname,'app')));
 | Routes Configurations from server/routes
 */
 routes(app);
+
+app.get('*', function(req, res) {
+    /** frontend routes =========================================================
+      * route to handle all angular requests
+      * load the single view file (angular will handle the page changes on the front-end)
+      **/
+     res.sendFile(__dirname + '/public/index.html' );
+});
+
+
+/**
+ * Start Express server.
+ */
+app.listen(port, function(){
+  console.log("Yourtube Server Listening on port ", port);
+});
