@@ -25,6 +25,8 @@ if(process.env.NODE_ENV === 'production') {
   });
 }
 
+config.dbconnect();
+
 app.set('port',port);
 app.use(express.static(path.join(__dirname,'app')));
 
@@ -49,5 +51,5 @@ app.get('*', function(req, res) {
  * Start Express server.
  */
 app.listen(port, function(){
-  console.log("Yourtube Server Listening on port ", port);
+  console.log("Todo Angular Listening on port ", port);
 });
