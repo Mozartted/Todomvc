@@ -11,8 +11,8 @@ A classic todo app to learn angular js, The Application would contain lots of co
 The application layout is very simple, it has a central textbar in which one types in a task and on pressing enter the tasks gets persisted to database and the entire tasks get collected from the database.
 
 ### The backend
-Well am not really the best guy when writing a readme, but let's see, the backend is created using node and mongoDb,
-basically the backend only collects data from the front end via express urls and then save these data to the mongoDb,
+The backend is created using node and mongoDb,
+basically the backend only collects data from the angular https and then save these data to the mongoDb,
 It also retrieves information, i.e data from the database and then delivers a response for $https to work with.
 
 ### Featured.
