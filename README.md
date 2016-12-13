@@ -12,7 +12,7 @@ The application layout is very simple, it has a central textbar in which one typ
 
 ### The backend
 The backend is created using node and mongoDb,
-basically the backend only collects data from the angular https and then save these data to the mongoDb,
+basically the backend only collects data from the angular https via  and then save these data to the mongoDb,
 It also retrieves information, i.e data from the database and then delivers a response for $https to work with.
 
 ### Featured.
