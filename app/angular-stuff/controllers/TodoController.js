@@ -25,9 +25,4 @@ app.controller('TodoController',function TodoController ($routeParams,$filter,st
             });
 
         }
-
-
-
-
-
     });
