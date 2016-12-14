@@ -5,11 +5,10 @@ var path = require('path');
 var config= require('./config')
 var routes=require('./server/routes');
 
-
-mongoose.connect(config.db);
-
 var app=express();
 var port=process.env.PORT||3000;
+
+config.dbconnect();
 
 // Force HTTPS on heroku
 if(process.env.NODE_ENV === 'production') {
@@ -24,8 +23,6 @@ if(process.env.NODE_ENV === 'production') {
       }
   });
 }
-
-config.dbconnect();
 
 app.set('port',port);
 app.use(express.static(path.join(__dirname,'app')));
@@ -43,7 +40,7 @@ app.get('*', function(req, res) {
       * route to handle all angular requests
       * load the single view file (angular will handle the page changes on the front-end)
       **/
-     res.sendFile(__dirname + '/public/index.html' );
+     res.sendFile(__dirname + '/app/index.html' );
 });
 
 
