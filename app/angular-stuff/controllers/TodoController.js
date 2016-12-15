@@ -1,4 +1,4 @@
-app.controller('TodoController',function TodoController ($routeParams,$filter,store){
+app.controller('TodoController',function TodoController ($scope,$routeParams,$filter,store){
         //the todo controller would be handling new additions to the
         //todo list and applying these to the DB via node and $resource
 
@@ -9,10 +9,10 @@ app.controller('TodoController',function TodoController ($routeParams,$filter,st
 
         self.newTask = ' ';
 
-        self.addTodo = function(task)
+        $scope.addTodo = function()
         {
             var newTask={
-                title:$ctrl.newTask.trim(),
+                title:$scope.newTask.trim(),
                 completed:false
             }
 
