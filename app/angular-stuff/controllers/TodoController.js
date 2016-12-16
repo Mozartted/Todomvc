@@ -5,7 +5,7 @@ app.controller('TodoController',function TodoController ($scope,$routeParams,$fi
         'use strict';
         var self=this;
 
-        var todos = self.todos = store.todos;
+        var todos = $scope.todos = store.todos;
 
         self.newTask = ' ';
 
@@ -18,7 +18,7 @@ app.controller('TodoController',function TodoController ($scope,$routeParams,$fi
 
             store.insert(newTask)
             .then(function success() {
-                self.newTodo = '';
+                $scope.newTask = '';
             })
             .finally(function () {
                 self.saving = false;

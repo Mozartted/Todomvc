@@ -7,10 +7,11 @@ app.config(['$routeProvider',function($routeProvider){
              resolve: {
                  store: function (TodoStore) {
  					// Get the correct module (API or localStorage).
- 					return TodoStore.then(function (module) {
- 						module.get(); // Fetch the todo records in the background.
- 						return module;
- 					});
+ 					return TodoStore
+          // .then(function (module) {
+ 				// 		     module.get(); // Fetch the todo records in the background.
+ 				// 		    return module;
+ 				// 	});
  				}
 			}
     };

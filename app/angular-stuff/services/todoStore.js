@@ -1,13 +1,15 @@
 app.factory('TodoStore',function($http,$injector){
 
-  return $http.get('/api')  .then(
-    function () {
-      return $injector.get('api');
-    },
-    function () {
-      return $injector.get('localStorage');
-    }
-  );
+  // return $http.get('/api').then(
+  //   function () {
+  //     return $injector.get('api');
+  //   },
+  //   function () {
+  //     return $injector.get('localStorage');
+  //   }
+  // );
+
+  return $injector.get('localStorage');
 })
 
     //the api factory for updating the resource from server
@@ -16,11 +18,11 @@ app.factory('TodoStore',function($http,$injector){
         var store={
             todos: [],
 
-			api: $resource('/api/todos/:id', null,
-				{
-					update: { method:'PUT' }
-				}
-			),
+			         api: $resource('/api/todos/:id', null,
+				            {
+					                update: { method:'PUT' }
+				            }
+			        ),
 
 			clearCompleted: function () {
 				var originalTodos = store.todos.slice(0);
