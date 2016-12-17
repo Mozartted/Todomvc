@@ -6,7 +6,6 @@
 ## Description
 A classic todo app to learn angular js, The Application would contain lots of components with regards to communication between angular and node.
 
-
 ### The layout
 The application layout is very simple, it has a central textbar in which one types in a task and on pressing enter the tasks gets persisted to database and the entire tasks get collected from the database.
 
