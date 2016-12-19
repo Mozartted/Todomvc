@@ -1,22 +1,15 @@
-<div class="col-md-12">
-    <div class="center" style="width:500px;">
-        <div class="col-md-12">
-            <h1>
-            TodoMVC angular
-            </h1>
-        </div>
-        <div class="col-md-12">
-            <div class="col-md-12 form-group">
-                <form id="todo-form" ng-submit="addTodo()">
-                <input type="text" ng-model="newTask" class="form-control" placeholder="What do you want to accomplish today">
-                </form>
-            </div>
-        </div>
-       <div class="col-md-12">
-           <ul class="list-group">
+
+        <header id="header">
+					<h1>Todo MVC angular</h1>
+					<form id="todo-form" ng-submit="addTodo()">
+						<input id="new-todo" placeholder="What needs to be done?" ng-model="newTodo" autofocus>
+					</form>
+				</header>
+
+           <!-- <ul class="list-group">
                <li class="list-group-item blocked" ng-repeat="todo in todos">
                    <div class="col-md-12">
-                       <div class="col-md-7">
+                       <div class="col-md-7">ng-disabled="saving"
                            {{todo.title}}
                        </div>
                        <div class="col-md-5">
@@ -27,12 +20,20 @@
                        </div>
                    </div>
                </li>
-           </ul>
-
-           <div class="col-md-12">
-               <div class="btn btn-primary"> All </div>
-               <div class="btn btn-primary"> Completed </div>
-           </div>
-       </div>
-    </div>
-</div>
+           </ul> -->
+           <section id="main" ng-show="todos.length" ng-cloak>
+   					<input id="toggle-all" type="checkbox" ng-model="allChecked" ng-click="markAll(allChecked)">
+   					<label for="toggle-all">Mark all as complete</label>
+   					<ul id="todo-list">
+   						<li ng-repeat="todo in todos | filter:statusFilter track by $index" ng-class="{completed: todo.completed, editing: todo == editedTodo}">
+   							<div class="view">
+   								<input class="toggle" type="checkbox" ng-model="todo.completed" ng-change="toggleCompleted(todo)">
+   								<label ng-dblclick="editTodo(todo)">{{todo.title}}</label>
+   								<button class="destroy" ng-click="removeTodo(todo)"></button>
+   							</div>
+   							<form ng-submit="saveEdits(todo, 'submit')">
+   								<input class="edit" ng-trim="false" ng-model="todo.title" todo-escape="revertEdits(todo)" ng-blur="saveEdits(todo, 'blur')" todo-focus="todo == editedTodo">
+   							</form>
+   						</li>
+   					</ul>
+   				</section>
