@@ -7,8 +7,10 @@
 <!--All the cool css links, wait its just bootstrap-->
 <link rel="stylesheet" href="styles/bootstrap.min.css">
 <link rel="stylesheet" href="styles/styles.css">
-<script src="scripts/jquery.min.js"></script>
-<script src="scripts/bootstrap.min.js"></script>
+<link rel="stylesheet" href="styles/base.css">
+<link rel="stylesheet" href="styles/index.css">
+<!-- <script src="scripts/jquery.min.js"></script> -->
+<!-- <script src="scripts/bootstrap.min.js"></script> -->
 <script src="angular-stuff/angular/angular.js"></script>
 <script src="angular-stuff/angular/angular-route.js"></script>
 <script src="angular-stuff/angular/angular-resource.js"></script>
@@ -16,18 +18,9 @@
 </head>
 
 <body>
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">TodoMVC by Mozartted</a>
-        </div>
-    </div>
-</nav>
-<div class="container" >
     <div ng-view></div>
-</div>
-
 </body>
+<script src="scripts/base.js"></script>
 <script src="angular-stuff/app.module.js"></script>
 <script src="angular-stuff/app.config.js"></script>
 <script src="angular-stuff/services/todoStore.js"></script>

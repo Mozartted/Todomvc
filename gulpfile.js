@@ -9,7 +9,9 @@ gulp.task('styles', function(){
     return gulp.src(
         [
             'node_modules/bootstrap/dist/css/bootstrap.min.css',
-            'styles.css'
+            'styles.css',
+            'node_modules/todomvc-common/base.css',
+            'node_modules/todomvc-app-css/index.css'
         ]
     ).
     pipe(gulp.dest('app/styles'));
@@ -36,7 +38,8 @@ gulp.task('scripts', function(){
     return gulp.src(
         [
             'node_modules/bootstrap/dist/js/bootstrap.min.js',
-            'node_modules/jquery/dist/jquery.min.js'
+            'node_modules/jquery/dist/jquery.min.js',
+            'node_modules/todomvc-common/base.js'
         ]
     ).
     pipe(gulp.dest('app/scripts'));

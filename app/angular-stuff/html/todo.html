@@ -2,14 +2,14 @@
         <header id="header">
 					<h1>Todo MVC angular</h1>
 					<form id="todo-form" ng-submit="addTodo()">
-						<input id="new-todo" placeholder="What needs to be done?" ng-model="newTodo" autofocus>
+						<input id="new-todo" placeholder="What needs to be done?" ng-model="newTask" ng-disabled="saving" autofocus>
 					</form>
 				</header>
 
            <!-- <ul class="list-group">
                <li class="list-group-item blocked" ng-repeat="todo in todos">
                    <div class="col-md-12">
-                       <div class="col-md-7">ng-disabled="saving"
+                       <div class="col-md-7">
                            {{todo.title}}
                        </div>
                        <div class="col-md-5">
