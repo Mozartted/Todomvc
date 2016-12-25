@@ -1,3 +1,4 @@
 node_modules
 .idea
+.env
 #All the bullshit you've got to ignore
