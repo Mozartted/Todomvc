@@ -2,7 +2,7 @@
 var express=require("express");
 var mongoose=require("mongoose");
 var path = require('path');
-var config= require('./config')
+var config= require('./config/createdb')
 var routes=require('./server/routes');
 
 var app=express();
