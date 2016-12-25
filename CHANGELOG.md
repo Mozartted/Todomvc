@@ -1,4 +1,8 @@
-[33m5ecd035[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m Updated readme :unamused:
+[33md4e7357[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m Renamed config file to config/createdb.js
+[33mc8e943e[m Added License
+[33m7183f62[m Added contributions
+[33mf06e6b4[m Created Changelog
+[33m5ecd035[m Updated readme :unamused:
 [33m58c8052[m[33m ([m[1;31morigin/master[m[33m)[m Modification to HTML
 [33m6c76602[m Css Modifications
 [33mabbdc77[m Special Changes to todo.html
