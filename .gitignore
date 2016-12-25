@@ -1,4 +1,5 @@
 node_modules
 .idea
 .env
+npm-debug.log
 #All the bullshit you've got to ignore
