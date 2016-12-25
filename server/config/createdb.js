@@ -1,8 +1,8 @@
 var mongoose   = require('mongoose'),
-    connectDb = process.env.MONGODB;
+    secrets= require('./secrets');
 
 var db = mongoose.connection;
-mongoose.connect(connectDb);
+mongoose.connect(secrets.db);
 
 module.exports = {
   dbconnect: function(){
