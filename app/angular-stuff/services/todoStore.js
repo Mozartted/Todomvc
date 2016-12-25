@@ -1,15 +1,13 @@
 app.factory('TodoStore',function($http,$injector){
 
-  // return $http.get('/api').then(
-  //   function () {
-  //     return $injector.get('api');
-  //   },
-  //   function () {
-  //     return $injector.get('localStorage');
-  //   }
-  // );
-
-  return $injector.get('localStorage');
+  return $http.get('/api').then(
+    function () {
+      return $injector.get('api');
+    },
+    function () {
+      return $injector.get('localStorage');
+    }
+  );
 })
 
     //the api factory for updating the resource from server
