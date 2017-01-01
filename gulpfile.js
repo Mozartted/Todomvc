@@ -3,12 +3,12 @@ var gulp=require("gulp"),
     concat=require("gulp-concat"),
     uglify=require("gulp-uglify");
 
-gulp.task('config',function(){
-  return gulp.src([
-    '.env.example'
-  ])
-  .pipe(gulp.dest('.env'));
-});
+// gulp.task('config',function(){
+//   return gulp.src([
+//     '.env.example'
+//   ])
+//   .pipe(gulp.dest('.env'));
+// });
 
 gulp.task('styles', function(){
     return gulp.src(
