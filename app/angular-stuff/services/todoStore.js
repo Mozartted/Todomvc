@@ -14,11 +14,15 @@ app.factory('TodoStore',function($http,$injector){
 {
   var store={
     todos: [],
+
+    //
     api: $resource(
-      '/api/todos/:id',
+      '/api/todo/:id',
        null,
-       {update:{ method:'PUT'}}
+       {
+         update:{ method:'PUT'}}
      ),
+
      clearCompleted: function ()
         {
 				    var originalTodos = store.todos.slice(0);
@@ -56,6 +60,8 @@ app.factory('TodoStore',function($http,$injector){
 				});
                 //copies the response to the store.todos tasks
 			},
+
+
 
 			insert: function (todo) {
 				var originalTodos = store.todos.slice(0);
