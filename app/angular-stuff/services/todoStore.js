@@ -9,37 +9,39 @@ app.factory('TodoStore',function($http,$injector){
     }
   );
 })
+//the api factory for updating the resource from server
+.factory('api',['$resource',function($resource)
+{
+  var store={
+    todos: [],
+    api: $resource(
+      '/api/todos/:id',
+       null,
+       {update:{ method:'PUT'}}
+     ),
+     clearCompleted: function ()
+        {
+				    var originalTodos = store.todos.slice(0);
 
-    //the api factory for updating the resource from server
-    .factory('api',['$resource',function($resource){
+				    var incompleteTodos = store.todos.filter(function (todo)
+            {
+					    return !todo.completed;
+            });
 
-        var store={
-            todos: [],
-
-			         api: $resource('/api/todos/:id', null,
-				            {
-					                update: { method:'PUT' }
-				            }
-			        ),
-
-			clearCompleted: function () {
-				var originalTodos = store.todos.slice(0);
-
-				var incompleteTodos = store.todos.filter(function (todo) {
-					return !todo.completed;
-				});
-
-				angular.copy(incompleteTodos, store.todos);
-
-				return store.api.delete(function () {
-					}, function error() {
-						angular.copy(originalTodos, store.todos);
-					});
+            //replacing the store.todo with the incompleteTodos
+				    angular.copy(incompleteTodos, store.todos);
+				      return store.api.delete(function (){}, function error()
+                {
+						      angular.copy(originalTodos, store.todos);
+					      }
+              );
 			},
 
 			delete: function (todo) {
 				var originalTodos = store.todos.slice(0);
 
+        // splicing to remove one element from the index
+        // of the todo, which is the todo
 				store.todos.splice(store.todos.indexOf(todo), 1);
 				return store.api.delete({ id: todo.id },
 					function () {
@@ -72,9 +74,9 @@ app.factory('TodoStore',function($http,$injector){
 				return store.api.update({ id: todo.id }, todo)
 					.$promise;
 			}
-        }
+    }
 
-        return store;
+    return store;
 
 
     }])
