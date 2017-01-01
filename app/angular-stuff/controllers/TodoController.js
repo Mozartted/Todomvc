@@ -14,8 +14,8 @@ app.controller('TodoController',function TodoController ($scope,$routeParams,$fi
             var newTask={
                 title:$scope.newTask.trim(),
                 completed:false
-            }
-
+            };
+            
             store.insert(newTask)
             .then(function success() {
                 $scope.newTask = '';
