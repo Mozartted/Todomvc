@@ -3,7 +3,12 @@ var gulp=require("gulp"),
     concat=require("gulp-concat"),
     uglify=require("gulp-uglify");
 
-
+gulp.task('config',function(){
+  return gulp.src([
+    '.env.example'
+  ])
+  .pipe(gulp.dest('.env'));
+});
 
 gulp.task('styles', function(){
     return gulp.src(
@@ -66,4 +71,4 @@ gulp.task('angular-stuff', function(){
     .pipe(gulp.dest('app/angular-stuff/angular'));
 });
 
-gulp.task('default',['scripts','angular-stuff','styles','fonts','serve']);
+gulp.task('default',['scripts','angular-stuff','styles','fonts','config','serve']);
