@@ -11,14 +11,13 @@ var Todo=require('../models/Todo');
 module.exports={
 
     Create:function(req,res){
-        var todo=req.body.todo;
-        var complete=false;
+        var todo=req.title;
+        var complete=req.completed;
 
         var task=new Todo(
             {
                 title:todo,
                 completed:complete,
-
             }
         );
 
