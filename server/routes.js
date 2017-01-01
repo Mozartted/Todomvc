@@ -5,8 +5,8 @@ var Todo  =  require('./controller/Todo.Controllers');
 
 //create,retrieve,update, delete
 module.exports=function(app){
-  app.post('/api/create',Todo.Create);//create
-  app.delete('/api/task/:public_id',Todo.Delete);//delete
-  app.get('/api/task',Todo.RetrieveAll);//retrieve
-  app.post('/api/update/:publlic_id',Todo.Update);//update
+  app.post('/api/todo',Todo.Create);//create
+  app.delete('/api/todo/:id',Todo.Delete);//delete
+  app.get('/api/todo',Todo.RetrieveAll);//retrieve
+  app.post('/api/todo/:id',Todo.Update);//update
 }
