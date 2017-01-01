@@ -17,8 +17,8 @@ app.controller('TodoController',function TodoController ($scope,$routeParams,$fi
             };
             
             store.insert(newTask)
-            .then(function success() {
-                $scope.newTask = '';
+            .then(function success(reponse) {
+                $scope.todos.slice()
             })
             .finally(function () {
                 self.saving = false;
