@@ -1,13 +1,12 @@
-# Todomvc angular
+# Todomvc
 
 ![](https://img.shields.io/badge/mozartted-approved-blue.svg)
 [![License](https://poser.pugx.org/unicodeveloper/laravel-wikipedia/license.svg)](LICENSE.md)
 
-> an angularjs implementation of the to-do application
+> A singlular Todo Application Implemented in serveral js frameworks and libraries
 
 # Table of Contents
 - [Description](#Description)
-- [Features](#Features)
 - [Change Log](#Change-log)
 - [Inspiration](#Inspiration)
 - [How can I thank you](#How-can-I-thank-you?)
@@ -15,20 +14,13 @@
 - [Security](#Security)
 
 ## Description
-A classic todo app to learn angular js, The Application would contain lots of components with regards to communication between angular and node.
-
-### Features
-In this project am gonna feature various components on angularjs namely
-* components
-* directives
-* factories and services
-* and possibly (no promises) lots of other goodies
+The Project is an application designed to show the possibilities of the js frameworks and libraries. Its meant to help begineers learn the basics of the framework.
 
 > this project would be heavily commented so watch out for them :smiley:.
 
 ## Change log
 
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+Each implementation has a changelog, Please see consult the one applying to the framework you seek for more information on what has changed recently.
 
 ## Inspiration
 
