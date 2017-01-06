@@ -5,7 +5,26 @@ app.controller('TodoController',function TodoController ($scope,$routeParams,$fi
         'use strict';
         var self=this;
 
+        store.get();
+
         var todos = $scope.todos = store.todos;
+
+        $scope.newTodo = '';
+    		$scope.editedTodo = null;
+
+    		$scope.$watch('todos', function () {
+    			$scope.remainingCount = $filter('filter')(todos, { completed: false }).length;
+    			$scope.completedCount = todos.length - $scope.remainingCount;
+    			$scope.allChecked = !$scope.remainingCount;
+    		}, true);
+
+    		// Monitor the current route for changes and adjust the filter accordingly.
+    		$scope.$on('$routeChangeSuccess', function () {
+    			var status = $scope.status = $routeParams.status || '';
+    			$scope.statusFilter = (status === 'active') ?
+    				{ completed: false } : (status === 'completed') ?
+    				{ completed: true } : {};
+    		});
 
         self.newTask = ' ';
 
@@ -15,7 +34,7 @@ app.controller('TodoController',function TodoController ($scope,$routeParams,$fi
                 title:$scope.newTask.trim(),
                 completed:false
             };
-            
+
             store.insert(newTask)
             .then(function success(reponse) {
                 $scope.todos.slice()
