@@ -1,10 +1,11 @@
-//controller to performseveral operations on Todo model...
+//controller to perform several operations on Todo model...
 //getting all tasks
 //saving tasks
 //getting completed tasks
 //getting incompleted tasks
 //deleting tasks
 //editing tasks
+
 var Todo=require('../models/Todo');
 
 //every operation here can be reused by the route to perform operations
@@ -50,7 +51,7 @@ module.exports={
                 return res.json(existingTodo);
             }
         });
-        //finding the Users matchnig the search
+        //finding the Users matching the search
     },
 
     RetrieveAll:function(req,res){
@@ -60,7 +61,7 @@ module.exports={
                 return res.json(Todos);
             }
         });
-        //finding the Users matchnig the search
+        //finding the Users matching the search
     },
 
     Delete:function(req,res){
