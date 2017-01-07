@@ -15,7 +15,7 @@
 - [Security](#Security)
 
 ## Description
-A classic todo app to learn angular js, The Application would contain lots of components with regards to communication between angular and node.
+A classic todo app to learn angular2, The Application would contain lots of components with regards to communication between angular and node.
 
 ### Features
 In this project am gonna feature various components on angularjs namely
