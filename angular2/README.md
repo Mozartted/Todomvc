@@ -1,56 +1,31 @@
-# Todomvc angular2
+# Angular2
 
-![](https://img.shields.io/badge/mozartted-approved-blue.svg)
-[![License](https://poser.pugx.org/unicodeveloper/laravel-wikipedia/license.svg)](LICENSE.md)
+This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.24.
 
-> an angularjs implementation of the to-do application
+## Development server
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-# Table of Contents
-- [Description](#Description)
-- [Features](#Features)
-- [Change Log](#Change-log)
-- [Inspiration](#Inspiration)
-- [How can I thank you](#How-can-I-thank-you?)
-- [License](#License)
-- [Security](#Security)
+## Code scaffolding
 
-## Description
-A classic todo app to learn angular2, The Application would contain lots of components with regards to communication between angular and node.
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
 
-### Features
-In this project am gonna feature various components on angularjs namely
-* components
-* directives
-* factories and services
-* and possibly (no promises) lots of other goodies
+## Build
 
-> this project would be heavily commented so watch out for them :smiley:.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-## Change log
+## Running unit tests
 
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Inspiration
+## Running end-to-end tests
 
- * [Todomvc by TasteJs](https://github.com/tastejs/Todomvc)
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Before running the tests make sure you are serving the app via `ng serve`.
 
-## Contributing
+## Deploying to Github Pages
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+Run `ng github-pages:deploy` to deploy to Github Pages.
 
-## How can I thank you?
+## Further help
 
-Why not star the github repo? I'd love the attention! Why not share the link for this repository on Twitter or HackerNews? Spread the word!
-
-Don't forget to [follow me on twitter](https://twitter.com/mozartted)!
-
-Thanks!
-Chibuike Emmanuel Osita.
-
-## License
-
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
-
-## Security
-
-If you discover any security related issues, please email [mozart.osita@gmail.com](mozart.osita@gmail.com) instead of using the issue tracker.
+To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
