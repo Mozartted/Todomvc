@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import {TodoStoreService} from './service/TodoStore/todo-store.service';
+import {TodoStoreService} from '../../service/TodoStore/todo-store.service';
+import { Todo } from '../../service/todo';
 
 @Component({
   selector: 'app-root',
   templateUrl: './components/appComponent/app.component.html',
-  styleUrls: ['./components/appComponent/app.component.css'],
-  provider:[TodoStoreService]
+  styleUrls: ['./components/appComponent/app.component.css']
+
 })
 export class AppComponent {
   todoStore: TodoStoreService;
@@ -15,7 +16,12 @@ export class AppComponent {
     this.todoStore=todoStore;
   }
 
-  addTodo():{
+  addTodo(){
+    // this makes a request to add the todo to the list.
+    todo=Todo(newTodoText);
+    //sending this todo via the service to update store.
+    todoStore
+    
 
   }
 
@@ -39,7 +45,7 @@ export class AppComponent {
 		todo.title = editedTitle;
 	}
 
-  removeCompleted():{
+  removeCompleted(todo: Todo){
 
   }
 
