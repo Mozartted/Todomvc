@@ -5,6 +5,7 @@ var mongoose=require("mongoose");
 var path = require('path');
 var config= require('./server/config/createdb')
 var routes=require('./server/routes');
+var bodyParser =require('body-parser');
 
 var app=express();
 var port=process.env.PORT||3000;
@@ -26,7 +27,9 @@ if(process.env.NODE_ENV === 'production') {
 }
 
 app.set('port',port);
-app.use(express.static(path.join(__dirname,'app')));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
+
 
 /*
 |-------------------------------------------------
