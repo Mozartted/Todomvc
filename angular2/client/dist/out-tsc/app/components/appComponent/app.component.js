@@ -8,12 +8,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
+import { Todo } from '../../service/todo';
 var AppComponent = (function () {
     function AppComponent() {
         this.newTodoText = '';
     }
     AppComponent.prototype.contructor = function (todoStore) {
         this.todoStore = todoStore;
+    };
+    AppComponent.prototype.addTodo = function () {
+        todo = Todo(newTodoText);
+        todoStore;
     };
     AppComponent.prototype.stopEditing = function (todo, editedTitle) {
         todo.title = editedTitle;
@@ -29,6 +34,8 @@ var AppComponent = (function () {
             return this.todoStore.remove(todo);
         }
         todo.title = editedTitle;
+    };
+    AppComponent.prototype.removeCompleted = function (todo) {
     };
     return AppComponent;
 }());
