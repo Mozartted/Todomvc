@@ -1,10 +1,10 @@
 <section class="todoapp">
 	<header class="header">
-		<h1>todos</h1>
+		<h1>Todo Angular 2 </h1>
 		<input class="new-todo" placeholder="What needs to be done?" autofocus="" [(ngModel)]="newTodoText" (keyup.enter)="addTodo()">
 	</header>
 	<section class="main" *ngIf="todoStore.todos.length > 0">
-		<input class="toggle-all" type="checkbox" *ngIf="todoStore.todos.length" #toggleall [checked]="todoStore.allCompleted()" (click)="todoStore.setAllTo(toggleall.checked)">
+		<input class="toggle-all" type="checkbox" *ngIf="todoStore.todos.length" #toggleall [checked]="todoStore.allCompleted()" >
 		<ul class="todo-list">
 			<li *ngFor="#todo of todoStore.todos" [class.completed]="todo.completed" [class.editing]="todo.editing">
 				<div class="view">
