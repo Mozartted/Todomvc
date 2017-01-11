@@ -36,14 +36,6 @@ app.use(express.static(path.join(__dirname,'app')));
 */
 routes(app);
 
-app.get('*', function(req, res) {
-    /** frontend routes =========================================================
-      * route to handle all angular requests
-      * load the single view file (angular will handle the page changes on the front-end)
-      **/
-     res.sendFile(__dirname + '/app/index.html' );
-});
-
 
 /**
  * Start Express server.
