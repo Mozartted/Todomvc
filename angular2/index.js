@@ -3,7 +3,7 @@ require('dotenv').load();
 var express=require("express");
 var mongoose=require("mongoose");
 var path = require('path');
-var config= require('./server/config/createdb')
+var config= require('./server/config/createdb');
 var routes=require('./server/routes');
 var bodyParser =require('body-parser');
 
