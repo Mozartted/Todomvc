@@ -10,25 +10,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
+import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 var TodoStoreService = (function () {
     function TodoStoreService(http) {
         this.http = http;
-        var collectedTodos = api.get('api/')
-            .toPromise()
-            .then(function (response) { return response.json().data; });
-        todos = collectedTodos;
+        this.baseUrl = 'http://localhost:3000/api/';
+        this.api = this.http;
     }
-    TodoStoreService.prototype.add = function () {
+    TodoStoreService.prototype.add = function (todo) {
     };
     TodoStoreService.prototype.delete = function () {
     };
     TodoStoreService.prototype.retrieve = function () {
-    };
-    TodoStoreService.prototype.allCompleted = function () {
-    };
-    TodoStoreService.prototype.getRemaining = function () {
+        return api.get(baseUrl)
+            .map(function (res) { return res.json(); })
+            .catch(function (error) { return Observable.throw(error.json().error || 'Serve error'); });
     };
     return TodoStoreService;
 }());
