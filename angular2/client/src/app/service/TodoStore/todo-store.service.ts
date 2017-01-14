@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 
 import { Todo } from './service/todo';
-import { Headers, Http } from '@angular/http';
+import { Headers, Http, Response, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
-import {Observable} from 'rxjs/Rx';
+import { Observable } from 'rxjs/Rx';
 
 // Import RxJs required methods
 import 'rxjs/add/operator/map';
@@ -13,21 +13,14 @@ import 'rxjs/add/operator/catch';
 export class TodoStoreService {
 
   todos:Array<Todo>;
+  baseUrl='http://localhost:3000/api/';
+  //am not really sure but I feel this is where the cool data would go.
 
-  private http;
+  constructor(private http:Http) {}
 
-  constructor(private http:Http) {
-    let collectedTodos=api.get('api/')
-                        .toPromise()
-                        .then(response => response.json().data as Todo[]);
-    todos=collectedTodos;
+  api=this.http;
 
-  }
-
-  api:http;
-
-
-  add():Promise<Todo>{
+  add(todo:Todo):Observable<Todo[]>{
 
   }
 
@@ -35,16 +28,18 @@ export class TodoStoreService {
 
   }
 
-  retrieve():Promise<Todo>{
-
+  retrieve():Observable<Todo[]>{
+    return api.get(baseUrl)
+              .map((res:Response)=>res.json())
+              .catch((error:any)=>Observable.throw(error.json().error || 'Serve error'));
   }
 
-  allCompleted(){
+  // allCompleted(){
+  //
+  // }
 
-  }
-
-  getRemaining(){
-
-  }
+  // getRemaining(){
+  //
+  // }
 
 }
