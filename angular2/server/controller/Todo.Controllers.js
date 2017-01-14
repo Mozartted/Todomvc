@@ -12,8 +12,8 @@ var Todo=require('../models/Todo');
 module.exports={
 
     Create:function(req,res){
-        var todo=req.title;
-        var complete=req.completed;
+        var todo=req.body.title;
+        var complete=req.body.completed;
 
         var task=new Todo(
             {
