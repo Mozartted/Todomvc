@@ -22,7 +22,7 @@ var TodoStoreService = (function () {
         var todoString = JSON.stringify(todo);
         var headers = new Headers({ 'Content-Type': 'application/json' });
         var options = new RequestOptions({ headers: headers });
-        return this.http.post(baseurl, todo, options)
+        return this.http.post(this.baseUrl, todo, options)
             .map(function (res) { return res.json(); })
             .catch(function (error) { return Observable.throw(error.json().error || 'Server error'); });
     };
