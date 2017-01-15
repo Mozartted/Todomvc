@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Todo } from './service/todo';
+import { Todo } from '../todo';
 import { Headers, Http, Response, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import { Observable } from 'rxjs/Rx';
@@ -17,14 +17,14 @@ export class TodoStoreService {
 
   constructor(private http:Http,) {}
   public todos:Array<Todo>;
-  public baseUrl='http://localhost:3000/api/';
+  private baseUrl='http://localhost:3000/api/';
 
   add(todo:Object):Observable<Todo[]>{
     let todoString=JSON.stringify(todo); //creating String payload
     let headers = new Headers({'Content-Type':'application/json'}); //set content type to json
     let options = new RequestOptions({headers: headers}); //creates a request option
 
-    return this.http.post(baseurl,todo,options)
+    return this.http.post(this.baseUrl,todo,options)
               .map((res:Response)=>res.json())
               .catch((error:any)=>Observable.throw(error.json().error || 'Server error'));
   }
