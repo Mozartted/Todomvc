@@ -8,7 +8,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Headers, Http, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
@@ -17,9 +17,14 @@ var TodoStoreService = (function () {
     function TodoStoreService(http) {
         this.http = http;
         this.baseUrl = 'http://localhost:3000/api/';
-        this.api = this.http;
     }
     TodoStoreService.prototype.add = function (todo) {
+        var todoString = JSON.stringify(todo);
+        var headers = new Headers({ 'Content-Type': 'application/json' });
+        var options = new RequestOptions({ headers: headers });
+        return this.http.post(baseurl, todo, options)
+            .map(function (res) { return res.json(); })
+            .catch(function (error) { return Observable.throw(error.json().error || 'Server error'); });
     };
     TodoStoreService.prototype.delete = function () {
     };
