@@ -29,7 +29,7 @@ var TodoStoreService = (function () {
     TodoStoreService.prototype.delete = function () {
     };
     TodoStoreService.prototype.retrieve = function () {
-        return api.get(baseUrl)
+        return this.http.get(this.baseUrl)
             .map(function (res) { return res.json(); })
             .catch(function (error) { return Observable.throw(error.json().error || 'Serve error'); });
     };
