@@ -44,7 +44,7 @@ export class TodoStoreService {
   }
 
   retrieve():Observable<Todo[]>{
-    return api.get(baseUrl)
+    return this.http.get(this.baseUrl)
               .map((res:Response)=>res.json())
               .catch((error:any)=>Observable.throw(error.json().error || 'Serve error'));
   }
