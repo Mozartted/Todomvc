@@ -29,16 +29,6 @@ export class TodoStoreService {
               .catch((error:any)=>Observable.throw(error.json().error || 'Server error'));
   }
 
-  // addComment (body: Object): Observable<Comment[]> {
-  //     let bodyString = JSON.stringify(body); // Stringify payload
-  //     let headers = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
-  //     let options = new RequestOptions({ headers: headers }); // Create a request option
-  //
-  //     return this.http.post(this.commentsUrl, body, options) // ...using post request
-  //                      .map((res:Response) => res.json()) // ...and calling .json() on the response to return data
-  //                      .catch((error:any) => Observable.throw(error.json().error || 'Server error')); //...errors if any
-  // }
-
   delete(){
 
   }
@@ -48,13 +38,5 @@ export class TodoStoreService {
               .map((res:Response)=>res.json())
               .catch((error:any)=>Observable.throw(error.json().error || 'Serve error'));
   }
-
-  // allCompleted(){
-  //
-  // }
-
-  // getRemaining(){
-  //
-  // }
 
 }
