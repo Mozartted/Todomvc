@@ -10,7 +10,8 @@ import { Todo } from '../../service/todo';
 })
 export class AppComponent {
   todoStore: TodoStoreService;
-  newTodoText = '';
+  newTodoText:string;
+  todo:Todo
 
   contructor(todoStore: TodoStoreService){
     this.todoStore=todoStore;
@@ -18,9 +19,8 @@ export class AppComponent {
 
   addTodo(){
     // this makes a request to add the todo to the list.
-    todo=Todo(newTodoText);
+    this.todo=new Todo(this.newTodoText);
     //sending this todo via the service to update store.
-    todoStore
     
 
   }
