@@ -11,14 +11,13 @@ import { Component } from '@angular/core';
 import { Todo } from '../../service/todo';
 var AppComponent = (function () {
     function AppComponent() {
-        this.newTodoText = '';
     }
     AppComponent.prototype.contructor = function (todoStore) {
         this.todoStore = todoStore;
     };
     AppComponent.prototype.addTodo = function () {
-        todo = Todo(newTodoText);
-        todoStore;
+        this.todo = new Todo(this.newTodoText);
+        this.todoStore.add(this.todo);
     };
     AppComponent.prototype.stopEditing = function (todo, editedTitle) {
         todo.title = editedTitle;
@@ -31,7 +30,7 @@ var AppComponent = (function () {
         editedTitle = editedTitle.trim();
         todo.editing = false;
         if (editedTitle.length === 0) {
-            return this.todoStore.remove(todo);
+            return this.todoStore.delete(todo);
         }
         todo.title = editedTitle;
     };

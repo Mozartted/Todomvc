@@ -26,7 +26,7 @@ var TodoStoreService = (function () {
             .map(function (res) { return res.json(); })
             .catch(function (error) { return Observable.throw(error.json().error || 'Server error'); });
     };
-    TodoStoreService.prototype.delete = function () {
+    TodoStoreService.prototype.delete = function (todo) {
     };
     TodoStoreService.prototype.retrieve = function () {
         return this.http.get(this.baseUrl)
