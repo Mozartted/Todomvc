@@ -21,6 +21,7 @@ export class AppComponent {
     // this makes a request to add the todo to the list.
     this.todo=new Todo(this.newTodoText);
     //sending this todo via the service to update store.
+    this.todoStore.add(this.todo);
     
 
   }
@@ -39,7 +40,7 @@ export class AppComponent {
 		todo.editing = false;
 
 		if (editedTitle.length === 0) {
-			return this.todoStore.remove(todo);
+			return this.todoStore.delete(todo);
 		}
 
 		todo.title = editedTitle;
