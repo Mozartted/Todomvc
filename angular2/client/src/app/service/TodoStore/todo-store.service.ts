@@ -14,10 +14,10 @@ export class TodoStoreService {
 
 
   //am not really sure but I feel this is where the cool data would go.
-
-  constructor(private http:Http,) {}
   public todos:Array<Todo>;
   private baseUrl='http://localhost:3000/api/';
+
+  constructor(private http:Http,) {}
 
   add(todo:Object):Observable<Todo[]>{
     let todoString=JSON.stringify(todo); //creating String payload
@@ -29,7 +29,7 @@ export class TodoStoreService {
               .catch((error:any)=>Observable.throw(error.json().error || 'Server error'));
   }
 
-  delete(){
+  delete(todo:Todo){
 
   }
 
