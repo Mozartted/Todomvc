@@ -17,7 +17,7 @@ export class TodoStoreService {
   public todos:Array<Todo>;
   private baseUrl='http://localhost:3000/api/';
 
-  constructor(private http:Http,) {}
+  constructor(private http:Http) {}
 
   add(todo:Object):Observable<Todo[]>{
     let todoString=JSON.stringify(todo); //creating String payload
@@ -30,13 +30,21 @@ export class TodoStoreService {
   }
 
   delete(todo:Todo){
-
+    this.todos.splice(this.todos.indexOf(todo), 1);
   }
 
   retrieve():Observable<Todo[]>{
     return this.http.get(this.baseUrl)
               .map((res:Response)=>res.json())
               .catch((error:any)=>Observable.throw(error.json().error || 'Serve error'));
+  }
+
+  getCompleted(){
+    this.todos.filter((todo:Todo)=> todo.completed == true);
+  }
+
+  removeCompleted(){
+    
   }
 
 }
