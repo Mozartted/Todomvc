@@ -27,11 +27,17 @@ var TodoStoreService = (function () {
             .catch(function (error) { return Observable.throw(error.json().error || 'Server error'); });
     };
     TodoStoreService.prototype.delete = function (todo) {
+        this.todos.splice(this.todos.indexOf(todo), 1);
     };
     TodoStoreService.prototype.retrieve = function () {
         return this.http.get(this.baseUrl)
             .map(function (res) { return res.json(); })
             .catch(function (error) { return Observable.throw(error.json().error || 'Serve error'); });
+    };
+    TodoStoreService.prototype.getCompleted = function () {
+        this.todos.filter(function (todo) { return todo.completed == true; });
+    };
+    TodoStoreService.prototype.removeCompleted = function () {
     };
     return TodoStoreService;
 }());

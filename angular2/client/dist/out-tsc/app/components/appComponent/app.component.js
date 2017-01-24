@@ -17,7 +17,11 @@ var AppComponent = (function () {
     };
     AppComponent.prototype.addTodo = function () {
         this.todo = new Todo(this.newTodoText);
+        this.todo.completed = false;
         this.todoStore.add(this.todo);
+    };
+    AppComponent.prototype.editTodo = function (todo) {
+        todo.editing = true;
     };
     AppComponent.prototype.stopEditing = function (todo, editedTitle) {
         todo.title = editedTitle;
@@ -34,7 +38,11 @@ var AppComponent = (function () {
         }
         todo.title = editedTitle;
     };
-    AppComponent.prototype.removeCompleted = function (todo) {
+    AppComponent.prototype.remove = function (todo) {
+        this.todoStore.delete(todo);
+    };
+    AppComponent.prototype.removeCompleted = function () {
+        this.todoStore.removeCompleted();
     };
     return AppComponent;
 }());
