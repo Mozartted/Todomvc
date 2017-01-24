@@ -49,8 +49,13 @@ export class AppComponent {
 		todo.title = editedTitle;
 	}
 
-  removeCompleted(todo: Todo){
+  remove(todo: Todo){
+    this.todoStore.delete(todo);
+  }
 
+  removeCompleted(){
+    //removing all todo with completed set to True
+    this.todoStore.removeCompleted();
   }
 
 
