@@ -20,10 +20,13 @@ export class AppComponent {
   addTodo(){
     // this makes a request to add the todo to the list.
     this.todo=new Todo(this.newTodoText);
+    this.todo.completed=false;
     //sending this todo via the service to update store.
     this.todoStore.add(this.todo);
-    
+  }
 
+  editTodo(todo:Todo){
+    todo.editing=true;
   }
 
   stopEditing(todo: Todo, editedTitle: string) {
