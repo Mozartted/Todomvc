@@ -43,6 +43,11 @@ export class TodoStoreService {
 
   delete(todo:Todo){
     this.todos.splice(this.todos.indexOf(todo), 1);
+
+    //sending an XHR request to get rid of the todo
+    return this.http.delete(this.baseUrl,todo)
+               .map((res:Response)=>res.json())
+              .catch((error:any)=>Observable.throw(error.json().error || 'Server error'));
   }
 
   retrieve():Observable<Todo[]>{
