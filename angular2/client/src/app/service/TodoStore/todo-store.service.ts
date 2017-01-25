@@ -31,7 +31,7 @@ export class TodoStoreService {
         
 }
 
-  add(todo:Object):Observable<Todo[]>{
+  add(todo:Todo):Observable<Todo[]>{
     let todoString=JSON.stringify(todo); //creating String payload
     let headers = new Headers({'Content-Type':'application/json'}); //set content type to json
     let options = new RequestOptions({headers: headers}); //creates a request option
