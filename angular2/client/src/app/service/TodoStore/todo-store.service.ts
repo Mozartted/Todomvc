@@ -23,7 +23,12 @@ export class TodoStoreService {
               .map((res:Response)=>res.json())
               .catch((error:any)=>Observable.throw(error.json().error || 'Server error'));
 
-          
+    todos.subscribe( 
+      todos => this.todos = todos, //Bind to view
+      err => {
+          console.log(err);
+        });
+        
 }
 
   add(todo:Object):Observable<Todo[]>{
