@@ -13,7 +13,7 @@ export class AppComponent {
   newTodoText:string;
   todo:Todo
 
-  contructor(todoStore: TodoStoreService){
+  constructor(todoStore: TodoStoreService){
     this.todoStore=todoStore;
   }
 
