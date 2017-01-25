@@ -17,7 +17,14 @@ export class TodoStoreService {
   public todos:Array<Todo>;
   private baseUrl='http://localhost:3000/api/';
 
-  constructor(private http:Http) {}
+  constructor(private http:Http) {
+    //the constructor is expected to collect the todos from the Server
+    let todos=http.get(this.baseUrl)    //retrieving all todods
+              .map((res:Response)=>res.json())
+              .catch((error:any)=>Observable.throw(error.json().error || 'Server error'));
+
+          
+}
 
   add(todo:Object):Observable<Todo[]>{
     let todoString=JSON.stringify(todo); //creating String payload
