@@ -57,11 +57,20 @@ export class TodoStoreService {
   }
 
   getCompleted(){
-    this.todos.filter((todo:Todo)=> todo.completed == true);
+    return this.todos.filter((todo:Todo)=> todo.completed == true);
   }
 
   removeCompleted(){
+    //get all completed then delete them, persist the deletion to node backend
+    let todos = this.todos.filter((todo:Todo)=>todo.completed==true);
+    for(let i=0;i<todos.length;i++){
+      this.todos.splice(this.todos.indexOf(todos[i]),1);
+    }
+                                                     
     
+    return this.http.delete(this.baseUrl,todos)
+                    .map((res:Response)=>res.json())
+                    .catch((err:any)=>Observable.throw(err.json().error||'Server error'));
   }
 
 }
