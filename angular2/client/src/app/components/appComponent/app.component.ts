@@ -9,54 +9,54 @@ import { Todo } from '../../service/todo';
 
 })
 export class AppComponent {
-  // todoStore: TodoStoreService;
-  // newTodoText:string;
-  // todo:Todo
+  todoStore: TodoStoreService;
+  newTodoText:string;
+  todo:Todo
 
-  // constructor(todoStore: TodoStoreService){
-  //   this.todoStore=todoStore;
-  // }
+  constructor(todoStore: TodoStoreService){
+    this.todoStore=todoStore;
+  }
 
-  // addTodo(){
-  //   // this makes a request to add the todo to the list.
-  //   this.todo=new Todo(this.newTodoText);
-  //   this.todo.completed=false;
-  //   //sending this todo via the service to update store.
-  //   this.todoStore.add(this.todo);
-  // }
+  addTodo(){
+    // this makes a request to add the todo to the list.
+    this.todo=new Todo(this.newTodoText);
+    this.todo.completed=false;
+    //sending this todo via the service to update store.
+    this.todoStore.add(this.todo);
+  }
 
-  // editTodo(todo:Todo){
-  //   todo.editing=true;
-  // }
+  editTodo(todo:Todo){
+    todo.editing=true;
+  }
 
-  // stopEditing(todo: Todo, editedTitle: string) {
-	// 	todo.title = editedTitle;
-	// 	todo.editing = false;
-	// }
+  stopEditing(todo: Todo, editedTitle: string) {
+		todo.title = editedTitle;
+		todo.editing = false;
+	}
 
-	// cancelEditingTodo(todo: Todo) {
-	// 	todo.editing = false;
-	// }
+	cancelEditingTodo(todo: Todo) {
+		todo.editing = false;
+	}
 
-	// updateEditingTodo(todo: Todo, editedTitle: string) {
-	// 	editedTitle = editedTitle.trim();
-	// 	todo.editing = false;
+	updateEditingTodo(todo: Todo, editedTitle: string) {
+		editedTitle = editedTitle.trim();
+		todo.editing = false;
 
-	// 	if (editedTitle.length === 0) {
-	// 		return this.todoStore.delete(todo);
-	// 	}
+		if (editedTitle.length === 0) {
+			return this.todoStore.delete(todo);
+		}
 
-	// 	todo.title = editedTitle;
-	// }
+		todo.title = editedTitle;
+	}
 
-  // remove(todo: Todo){
-  //   this.todoStore.delete(todo);
-  // }
+  remove(todo: Todo){
+    this.todoStore.delete(todo);
+  }
 
-  // removeCompleted(){
-  //   //removing all todo with completed set to True
-  //   this.todoStore.removeCompleted();
-  // }
+  removeCompleted(){
+    //removing all todo with completed set to True
+    this.todoStore.removeCompleted();
+  }
 
 
 }
