@@ -1,6 +1,6 @@
-var gulp      =    require('gulp'),
-    concat    =    require('gulp-concat'),
-    uglify    =    require('gulp-uglify');
+var gulp      =    require('gulp');
+    // concat    =    require('gulp-concat'),
+    // uglify    =    require('gulp-uglify');
 
 
 gulp.task('todoscripts',function(){
@@ -10,7 +10,6 @@ gulp.task('todoscripts',function(){
                  'node_modules/todomvc-app-css/index.css'
              ]
            )
-           .pipe(concat('styles.css'))
            .pipe(gulp.dest('client/src'));
 });
 
