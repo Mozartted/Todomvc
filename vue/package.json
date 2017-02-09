@@ -1,0 +1,30 @@
+{
+  "name": "todomvc-vue",
+  "version": "1.0.0",
+  "description": "implementation of the todo application in vue 2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mozartted/Todomvc.git"
+  },
+  "keywords": [
+    "vue",
+    "js"
+  ],
+  "author": "mozartted",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mozartted/Todomvc/issues"
+  },
+  "homepage": "https://github.com/mozartted/Todomvc#readme",
+  "dependencies": {
+    "director": "^1.2.8",
+    "todomvc-app-css": "^2.0.6",
+    "todomvc-common": "^1.0.3",
+    "vue": "^2.1.10",
+    "vue-resource": "^1.2.0"
+  }
+}
