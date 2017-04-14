@@ -64,6 +64,14 @@ module.exports.connections = {
   //   password: 'password', //optional
   //   database: 'your_mongo_db_name_here' //optional
   // },
+  localMongoDb: {
+    adapter: 'sails-mongo',
+    host: 'localhost', // defaults to `localhost` if omitted 
+    port: process.env.PORT, // defaults to 27017 if omitted 
+    user: '', // or omit if not relevant 
+    password: '', // or omit if not relevant 
+    database: process.env.DATABASE // or omit if not relevant 
+  },
 
   /***************************************************************************
   *                                                                          *
