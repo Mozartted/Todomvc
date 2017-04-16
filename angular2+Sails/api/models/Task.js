@@ -8,7 +8,15 @@
 module.exports = {
 
   attributes: {
-
+    id:{
+      type:'integer',
+      autoIncrement:true,
+      primaryKey:true
+    },
+    task: {
+      type: 'string',
+      defaultsTo: 'nothing here man'
+    },
   }
 };
 
