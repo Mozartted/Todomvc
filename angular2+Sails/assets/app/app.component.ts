@@ -6,7 +6,7 @@ import {Task} from './task';
     selector: 'my-app',
     template: '<h1>My First Angular/Sails App</h1>'
 })
-export class AppComponent { 
+export class AppComponent {
 
     todoText:String;
     taskStore: TaskService
@@ -19,12 +19,12 @@ export class AppComponent {
     addTask(){
         // adding the new task
         let task = new Task(this.todoText);
-        this.taskStore.addTask();
+        this.taskStore.addTask(task);
     }
 
     removeTask(task : Task){
         // remove the given task
-        this.taskStore.remove();
+        this.taskStore.remove(task);
     }
 
     editTask(task: Task, editedTask: string){
@@ -32,7 +32,7 @@ export class AppComponent {
         // check that editedTask equal actual values
         if(editedTask!==null || editedTask!==''){
             task.tasks=editedTask;
-            this.taskStore.updateTask();
+            this.taskStore.updateTask(task);
         }
     }
 
