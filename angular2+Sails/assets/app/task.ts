@@ -1,6 +1,6 @@
 export class Task{
 
-	private id: String;
+	public id: String;
     private task: String;
 	get tasks() {
 		return this.task;
@@ -14,4 +14,3 @@ export class Task{
 
 	}
 }
-
