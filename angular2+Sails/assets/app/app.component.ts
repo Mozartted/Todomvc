@@ -4,13 +4,11 @@ import {Task} from './task';
 
 @Component({
     selector: 'my-app',
-    template: '<h1>My First Angular/Sails App</h1>'
+   templateUrl: './app.component.html'
 })
-export class AppComponent {
-
+export class AppComponent{
     todoText:String;
-    taskStore: TaskService
-
+    taskStore:TaskService;
     constructor(taskStore:TaskService){
         // create a list of tasks
         this.taskStore = taskStore;
@@ -35,5 +33,4 @@ export class AppComponent {
             this.taskStore.updateTask(task);
         }
     }
-
 }

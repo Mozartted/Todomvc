@@ -1,0 +1,25 @@
+<section class="todoapp">
+<header class="header">
+	<!-- the main heder with input tag  -->
+	<h1>Todo MVC angular</h1>
+		<form id="todo-form" ng-submit="addTodo()">
+			<input id="new-todo" placeholder="What needs to be done?"
+			[(ngModel)]="todoText" (keyup.enter)="addTask()" name="task" ng-model="newTask" ng-disabled="saving" autofocus="">
+		</form>
+</header>
+<section id="main" *ngIf="taskStore.tasks.length > 0">
+	<input class="toggle-all" type="checkbox" *ngIf="taskStore.tasks.length" #toggleall >
+
+			<ul id="todo-list">
+					<li *ngFor="let todo of taskStore.tasks" >
+						<div class="view">
+							<input class="toggle" type="checkbox" (click)="toggleCompletion(todo)" [checked]="todo.completed">
+							<label (dblclick)="editTodo(todo)">{{todo.task}}</label>
+							<button class="destroy" (click)="remove(todo)"></button>
+						</div>
+
+						<input class="edit" *ngIf="todo.editing" [value]="todo.title" #editedtodo (blur)="stopEditing(todo, editedtodo.value)" (keyup.enter)="updateEditingTodo(todo, editedtodo.value)" (keyup.escape)="cancelEditingTodo(todo)">
+				</li>
+			</ul>
+</section>
+</section>

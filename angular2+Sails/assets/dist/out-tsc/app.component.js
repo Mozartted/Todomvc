@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,10 +7,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var task_service_1 = require("./task.service");
-var task_1 = require("./task");
+import { Component } from '@angular/core';
+import { TaskService } from './task.service';
+import { Task } from './task';
 var AppComponent = (function () {
     function AppComponent(taskStore) {
         // create a list of tasks
@@ -19,7 +17,7 @@ var AppComponent = (function () {
     }
     AppComponent.prototype.addTask = function () {
         // adding the new task
-        var task = new task_1.Task(this.todoText);
+        var task = new Task(this.todoText);
         this.taskStore.addTask(task);
     };
     AppComponent.prototype.removeTask = function (task) {
@@ -37,11 +35,11 @@ var AppComponent = (function () {
     return AppComponent;
 }());
 AppComponent = __decorate([
-    core_1.Component({
+    Component({
         selector: 'my-app',
-        templateUrl: './app/app.component.html'
+        templateUrl: './app.component.html'
     }),
-    __metadata("design:paramtypes", [task_service_1.TaskService])
+    __metadata("design:paramtypes", [TaskService])
 ], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+export { AppComponent };
+//# sourceMappingURL=/home/mozartted/PROJECTS/javascript/Todomvc/angular2+Sails/app.component.js.map

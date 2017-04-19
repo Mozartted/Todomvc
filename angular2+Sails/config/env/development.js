@@ -19,6 +19,7 @@ module.exports = {
 
   models: {
     connection: 'localMongoDb'
-  }
+  },
+   hookTimeout: 40000
 
 };
