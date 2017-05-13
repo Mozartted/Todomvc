@@ -2,10 +2,10 @@
 <header class="header">
 	<!-- the main heder with input tag  -->
 	<h1>Todo MVC angular</h1>
-		<form id="todo-form" ng-submit="addTodo()">
+		<!--<form id="todo-form" ng-submit="addTodo()">
 			<input id="new-todo" placeholder="What needs to be done?"
 			[(ngModel)]="todoText" (keyup.enter)="addTask()" name="task" ng-model="newTask" ng-disabled="saving" autofocus="">
-		</form>
+		</form>-->
 </header>
 <section id="main" *ngIf="taskStore.tasks.length > 0">
 	<input class="toggle-all" type="checkbox" *ngIf="taskStore.tasks.length" #toggleall >

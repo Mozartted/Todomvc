@@ -11,10 +11,14 @@ module.exports.webpack = {
 
     devtool: 'eval',
 
-    entry: [
-      './assets/js',
-      'webpack-hot-middleware/client'
-    ],
+    // entry: [
+    //   './assets/js/*js',
+    //   // 'webpack-hot-middleware/client'
+    // ],
+    entry: {
+        app: [ path.resolve(__dirname, '../assets/js', 'systemjs.config') ]
+        // vendor: [ path.resolve(rootDir, 'src', 'vendor') ]
+    },
 
     output: {
       path: path.resolve(__dirname, '../.tmp/public'),
@@ -37,21 +41,35 @@ module.exports.webpack = {
     ],
 
     resolve: {
-      extensions: ['', '.js', '.jsx']
+      extensions: [
+        '',
+        '.js',
+        // '.jsx',
+        '.ts',
+        '.html'
+      ]
     },
 
     module: {
       loaders: [
-        {
-          test: /\.jsx?$/,
-          exclude: /(bower_components|node_modules)/,
-          loader: 'babel',
-        },
+        // {
+        //   test: /\.jsx?$/,
+        //   exclude: /(bower_components|node_modules)/,
+        //   loader: 'babel',
+        // },
+        { loader: 'raw', test: /\.(css|html)$/ },
+       {  loader: 'ts', test: /\.ts$/ },
         { test: /\.css$/, loader: 'style!css' },
         {
           test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
-          loader: "file" }
-      ]
+          loader: "file" 
+        },
+        
+      ],
+
+      preLoaders: [
+            { exclude: /node_modules/, loader: 'tslint', test: /\.ts$/ }
+        ]
     }
   },
 
