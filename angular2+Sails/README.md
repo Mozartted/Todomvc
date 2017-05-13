@@ -1,3 +1,3 @@
 # angular2+Sails
 
-a [Sails](http://sailsjs.org) application
+an [Angular](https://angular.io) & [Sails](http://sailsjs.org) application
