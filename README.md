@@ -1,7 +1,6 @@
 # Todomvc
 
 ![](https://img.shields.io/badge/mozartted-approved-blue.svg)
-[![License](https://poser.pugx.org/unicodeveloper/laravel-wikipedia/license.svg)](LICENSE.md)
 
 > A singlular Todo Application Implemented in serveral js frameworks and libraries
 
@@ -30,11 +29,6 @@ Each implementation has a changelog, Please see consult the one applying to the 
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
-## How can I thank you?
-
-Why not star the github repo? I'd love the attention! Why not share the link for this repository on Twitter or HackerNews? Spread the word!
-
-Don't forget to [follow me on twitter](https://twitter.com/mozartted)!
 
 Thanks!
 Chibuike Emmanuel Osita.
