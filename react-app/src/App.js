@@ -13,11 +13,12 @@ export class App extends Component {
     ];
   };
 
-  renderTodos(){
-    var todo = this.getTodos();
-    return todo.map(todo=>{
-      <Todo task={todo.task} id={todo.id}></Todo>
-    });
+  addTodo(){
+    // function to add todo to the list.
+  }
+
+  removeTodo(){
+    // removing todo elemeent and addition
   }
 
   render() {
