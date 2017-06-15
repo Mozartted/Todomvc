@@ -39,10 +39,6 @@ export class App extends Component {
     // removing todo elemeent and addition
   }
 
-  // renderTodos(){
-  //
-  // }
-
   render() {
     return (
       <section>
