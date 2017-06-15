@@ -6,5 +6,10 @@ import app from './services/service.js';
 
 var models = new app.TodoModel('todos');
 
-ReactDOM.render(<App models = {models} />, document.getElementById('root'));
-registerServiceWorker();
+function render(){
+  ReactDOM.render(<App models = {models} />, document.getElementById('root'));
+  registerServiceWorker();
+}
+
+models.subscribe(render);
+render();

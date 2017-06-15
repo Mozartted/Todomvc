@@ -30,6 +30,7 @@ var app = {};
 			title: title,
 			completed: false
 		});
+		
 		this.inform();
 	};
 

@@ -1,49 +1,68 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import {TodoComponent} from './components/Todo.jsx';
 import './App.css';
-import app from './services/service.js';
 
 export class App extends Component {
     constructor(props){
       // on loading set up props with all current todo
       super(props);
       this.state = {text:''};
-      // setting up props.todos to todoService
+      this.text = '';
+      this.ENTER_KEY = 13;
+      this.handleChange = this.handleChange.bind(this);
+      this.handleNewTodoKeyDown = this.handleNewTodoKeyDown.bind(this);
+      this.state ={todos:this.props.models.todos};
+      // this.renderTodos = this.renderTodos.bind(this);
     }
 
-  addTodo(){
-    // function to add todo to the list.
+    handleChange(event) {
+			this.setState({newTodo: event.target.value});
+		}
 
-    var title = this.state.text;
-    // create instance of todo
-    app.TodoStore.addTodo(title);
-  }
+	handleNewTodoKeyDown(event) {
+			if (event.keyCode !== this.ENTER_KEY) {
+				return;
+			}
+
+			event.preventDefault();
+
+			var val = this.state.newTodo.trim();
+
+			if (val) {
+				this.props.models.addTodo(val);
+        this.setState({todos:this.props.models.todos})
+				this.setState({newTodo: ''});
+			}
+		}
 
   removeTodo(){
     // removing todo elemeent and addition
   }
 
+  // renderTodos(){
+  //
+  // }
+
   render() {
     return (
       <section>
       <header className="header">
-      	<h1>Todo MVC angular</h1>
+      	<h1>Todo MVC React</h1>
       		<form id="todo-form">
-      			<input id="new-todo" onChange={this.addTodo} placeholder="What needs to be done?" value={this.state.text} autofocus="" />
+      			<input id="new-todo" onChange={this.handleChange} onKeyDown={this.handleNewTodoKeyDown} placeholder="What needs to be done?"/>
       		</form>
       </header>
       <section id="main">
       	<input className="toggle-all" type="checkbox"/>
         <ul>
-          <TodoComponent todos = {this.props.models.todos} />
+          <TodoComponent todos = {this.state.todos} />;
         </ul>
       </section>
       </section>
 
+      // changes to models are supposed to trigger re-render
     );
   }
 }
-
 
 export default App;
