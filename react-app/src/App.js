@@ -1,24 +1,23 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import {Todo} from './components/Todo.jsx';
+import {TodoComponent} from './components/Todo.jsx';
 import './App.css';
-import {Todo, TodoStore} from './service.js';
+import app from './services/service.js';
 
 export class App extends Component {
-
-  getTodos(){
-    return [
-      {id:1,task:"This is the Task Name"},
-      {id:2,task:"This is the Task Objectt"},
-      {id:3,task:"This is the Task other info stuff" }
-    ];
-  };
+    constructor(props){
+      // on loading set up props with all current todo
+      super(props);
+      this.state = {text:''};
+      // setting up props.todos to todoService
+    }
 
   addTodo(){
     // function to add todo to the list.
 
-    var todo = this.state.text;
-    var 
+    var title = this.state.text;
+    // create instance of todo
+    app.TodoStore.addTodo(title);
   }
 
   removeTodo(){
@@ -26,7 +25,6 @@ export class App extends Component {
   }
 
   render() {
-    const todo = this.getTodos();
     return (
       <section>
       <header className="header">
@@ -38,7 +36,7 @@ export class App extends Component {
       <section id="main">
       	<input className="toggle-all" type="checkbox"/>
         <ul>
-          <Todo todos = {todo} />
+          <TodoComponent todos = {this.props.models.todos} />
         </ul>
       </section>
       </section>
@@ -46,5 +44,6 @@ export class App extends Component {
     );
   }
 }
+
 
 export default App;

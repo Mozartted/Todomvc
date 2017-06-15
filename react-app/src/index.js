@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {App} from './App';
 import registerServiceWorker from './registerServiceWorker';
-import './index.css';
+import app from './services/service.js';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+var models = new app.TodoModel('todos');
+
+ReactDOM.render(<App models = {models} />, document.getElementById('root'));
 registerServiceWorker();
