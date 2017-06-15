@@ -1,10 +1,10 @@
 // obtainning the utils file
 // var utils = require('./utils')
 import utils from './utils';
-var app = app || {};
+var app = {};
 
 (function () {
-	'use strict';
+	// 'use strict';
 
 	var Utils = utils.Utils;
 	// Generic "model" object. You can use whatever
@@ -30,7 +30,6 @@ var app = app || {};
 			title: title,
 			completed: false
 		});
-
 		this.inform();
 	};
 
@@ -83,6 +82,3 @@ var app = app || {};
 })();
 
 export default app;
-// module.exports={
-//   Store:app
-// };
