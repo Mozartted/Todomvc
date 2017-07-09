@@ -19,7 +19,7 @@ export class App extends Component {
 			this.setState({newTodo: event.target.value});
 		}
 
-	handleNewTodoKeyDown(event) {
+	  handleNewTodoKeyDown(event) {
 			if (event.keyCode !== this.ENTER_KEY) {
 				return;
 			}
@@ -35,26 +35,33 @@ export class App extends Component {
 			}
 		}
 
-  removeTodo(){
-    // removing todo elemeent and addition
-  }
+    removeTodo(todo, ev){
+      // removing todo elemeent and addition
+      ev.preventDefault();
+      var todos  =  this.props.models.destroy(todo);
+      this.setState({todos:todos});
+    }
 
-  render() {
-    return (
-      <section>
-      <header className="header">
-      	<h1>Todo MVC React</h1>
-      		<form id="todo-form">
-      			<input id="new-todo" onChange={this.handleChange} onKeyDown={this.handleNewTodoKeyDown} placeholder="What needs to be done?"/>
-      		</form>
-      </header>
-      <section id="main">
-      	<input className="toggle-all" type="checkbox"/>
-        <ul>
-          <TodoComponent todos = {this.state.todos} />;
-        </ul>
-      </section>
-      </section>
+    checkTodo(){
+      // check as complete
+    }
+
+    render() {
+      return (
+        <section>
+        <header className="header">
+      	  <h1>Todo MVC React</h1>
+      		  <form id="todo-form">
+      			  <input id="new-todo" onChange={this.handleChange} onKeyDown={this.handleNewTodoKeyDown} placeholder="What needs to be done?"/>
+      		  </form>
+        </header>
+        <section id="main">
+      	  <input className="toggle-all" type="checkbox"/>
+          <ul>
+            <TodoComponent todos = {this.state.todos} remove={this.removeTodo}/>;
+          </ul>
+        </section>
+        </section>
 
       // changes to models are supposed to trigger re-render
     );
